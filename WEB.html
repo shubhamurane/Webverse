@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBVERSE - Web Development Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Welcome Screen Animation */
+    #welcome-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 1s ease-out, visibility 1s ease-out;
+    }
+
+    #welcome-screen.hidden {
+      opacity: 20;
+      visibility: hidden;
+    }
+
+    .welcome-logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .logo-animation {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .nav-link {
+      transition: color 0.3s ease;
+      color: #fff;
+    }
+
+    .nav-link:hover {
+      color: #ccc;
+    }
+
+    .section-bg-white {
+      background-color: #111;
+    }
+
+    .section-bg-gray {
+      background-color: #1a1a1a;
+    }
+
+    .text-gray-600 {
+      color: #ccc;
+    }
+
+    .text-gray-300 {
+      color: #999;
+    }
+
+    .button-white {
+      background-color: #fff;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    .button-white:hover {
+      background-color: #ccc;
+    }
+
+    .circle-icon {
+      background-color: #333;
+    }
+
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+
+  <!-- Welcome Screen -->
+  <div id="welcome-screen">
+    <img src="https://raw.githubusercontent.com/shubhamurane/Webverse/851e4661f2ca2ce283d96e6c85a70e1134bf1f2a/grad-removebg-preview-Picsart-AiImageEnhancer.png" alt="WebVerse Logo" class="welcome-logo">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to <span class="text-white">WebVerse</span></h1>
+    <p class="text-gray-400 mb-8">Crafting Digital Experiences That Inspire</p>
+    <button id="enter-site" class="button-white px-8 py-3 rounded-full font-semibold">Enter Website</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-black shadow-lg fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-3">
+          <img src="https://raw.githubusercontent.com/shubhamurane/Webverse/851e4661f2ca2ce283d96e6c85a70e1134bf1f2a/grad-removebg-preview-Picsart-AiImageEnhancer.png" width="47" height="47">
+          <span class="text-xl font-bold">WEBVERSE</span>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="gradient-bg min-h-screen flex items-center justify-center pt-16">
+    <div class="text-center px-4">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">WEBVERSE</h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">Crafting Digital Experiences That Transform Your Business</p>
+      <p class="text-lg mb-10 text-gray-400">Professional Web Development Services by Expert Developers</p>
+      <a href="#contact" class="button-white px-8 py-4 rounded-full text-lg font-semibold inline-block">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 section-bg-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">About WEBVERSE</h2>
+      <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Who We Are</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">WEBVERSE is a dynamic web development company founded by three passionate developers who share a vision of creating exceptional digital experiences.</p>
+          <p class="text-gray-300 leading-relaxed">Our team combines creativity with technical expertise to deliver solutions that not only look great but also perform exceptionally.</p>
+        </div>
+        <div class="section-bg-white p-8 rounded-lg shadow-lg">
+          <h4 class="text-xl font-bold mb-6">Our Mission</h4>
+          <p class="text-gray-300 mb-6">To empower businesses with cutting-edge web solutions that drive growth and engagement.</p>
+          <h4 class="text-xl font-bold mb-6">Our Vision</h4>
+          <p class="text-gray-300">To be the leading web development company transforming ideas into digital realities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 section-bg-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">Our Services</h2>
+      <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="section-bg-white p-8 rounded-lg card-hover text-center">
+          <div class="w-16 h-16 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300">D</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Responsive Web Design</h3>
+          <p class="text-gray-300">Creating beautiful, mobile-first websites that work perfectly on all devices.</p>
+        </div>
+        <div class="section-bg-white p-8 rounded-lg card-hover text-center">
+          <div class="w-16 h-16 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300">C</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Custom Development</h3>
+          <p class="text-gray-300">Building tailored web applications with modern technologies to meet your needs.</p>
+        </div>
+        <div class="section-bg-white p-8 rounded-lg card-hover text-center">
+          <div class="w-16 h-16 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300">Q</span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Quality Assurance</h3>
+          <p class="text-gray-300">Ensuring your website performs flawlessly with thorough testing and optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-20 section-bg-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">Meet Our Founders</h2>
+      <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="section-bg-white p-8 rounded-lg shadow-lg text-center card-hover">
+          <div class="w-24 h-24 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300 text-2xl font-bold">P</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">PRASHIL</h3>
+          <p class="text-gray-300 mb-4">Co-Founder & Lead Developer</p>
+        </div>
+        <div class="section-bg-white p-8 rounded-lg shadow-lg text-center card-hover">
+          <div class="w-24 h-24 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300 text-2xl font-bold">S</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">SHUBHAM</h3>
+          <p class="text-gray-300 mb-4">Co-Founder & Technical Architect</p>
+        </div>
+        <div class="section-bg-white p-8 rounded-lg shadow-lg text-center card-hover">
+          <div class="w-24 h-24 circle-icon rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-gray-300 text-2xl font-bold">V</span>
+          </div>
+          <h3 class="text-xl font-bold mb-2">VYANKTESH</h3>
+          <p class="text-gray-300 mb-4">Co-Founder & UI/UX Specialist</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 section-bg-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+      <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+      <div class="grid md:grid-cols-2 gap-12 text-left">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 circle-icon rounded-full flex items-center justify-center">
+                <span class="text-gray-300">@</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-gray-300">prashilkavathekar143@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 circle-icon rounded-full flex items-center justify-center">
+                <span class="text-gray-300">📞</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Phone</h4>
+                <p class="text-gray-300">7058171264</p>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 circle-icon rounded-full flex items-center justify-center">
+                <span class="text-gray-300">📍</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Office</h4>
+                <p class="text-gray-300">Ichalkaranji</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-bg-white p-8 rounded-lg">
+          <form id="contactForm" class="space-y-6">
+            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700" required>
+            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700" required>
+            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg bg-black text-white border border-gray-700" required></textarea>
+            <button type="submit" class="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-300">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h4 class="font-bold mb-4 text-white">WEBVERSE</h4>
+          <p class="text-gray-300">Crafting digital experiences that transform businesses and create lasting impressions.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4 text-white">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="#services" class="hover:text-white">Services</a></li>
+            <li><a href="#team" class="hover:text-white">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4 text-white">Connect</h4>
+          <p>Email: prashilkavathekar143@gmail.com</p>
+          <p>Phone: 7058171264</p>
+          <div class="flex space-x-4 mt-2">
+            <a href="#" class="hover:text-white">LinkedIn</a>
+            <a href="#" class="hover:text-white">GitHub</a>
+            <a href="#" class="hover:text-white">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p>&copy; 2025 WEBVERSE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+
+    // Welcome screen transition
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const enterButton = document.getElementById('enter-site');
+
+    enterButton.addEventListener('click', () => {
+      welcomeScreen.classList.add('hidden');
+    });
+
+    // Auto-hide welcome after 5 seconds
+    setTimeout(() => {
+      welcomeScreen.classList.add('hidden');
+    }, 5000);
+  </script>
+</body>
+</html>
